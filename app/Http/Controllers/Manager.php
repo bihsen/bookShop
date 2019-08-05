@@ -104,7 +104,8 @@ class Manager extends Controller
     public function edit( $id){
 
         $book= DB::select("SELECT * FROM books WHERE books.id_book=?", [$id]);
-       return view('edit' , ['books'=>$book[0], "id" => $id]);
+
+        return view('edit' , ['books'=>$book[0], "id" => $id]);
 
 
 
@@ -119,6 +120,8 @@ class Manager extends Controller
 
         DB::update("UPDATE books SET Author=?, Title=? WHERE id_book=?",
         [$request->Author, $request->Title, $id]);
+
+        return redirect('show');
 
     }
 
