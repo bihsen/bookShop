@@ -1,0 +1,44 @@
+<?php
+
+/*
+
+	Get back to our online books website.
+
+	You should improve your project using Migration & Eloquent model
+
+	- Step 1 :
+
+		Create a migration to create the table 'books'.
+		Do not forget any fields.
+
+	- Step 2 :
+
+		Create seeds for this table.
+		You should have 10 fake books.
+
+	- Step 3 :
+
+		Create the model 'Book'.
+		This model will be use to handle book in our application and save or edit them in databases.
+		For now, it should be empty
+
+	- Step 4 :
+
+		Now, you will edit your controller !
+		The controller should ask the model for datas that he needs.
+		He can eventually do some validations (basic validations OR you can check Laravel Validations).
+		And then it will call the view.
+
+	- Step 5 :
+
+		If you didn't do the Step 3 of previous exercise, you will have to do this now.
+
+		You will have to change the operations for Inserting and Updating.
+		You should now do an ajax call when clicking on the submit button.
+		It should display a message.
+		You should handle errors in the form and do validations.
+
+
+*/
+
+ ?>
