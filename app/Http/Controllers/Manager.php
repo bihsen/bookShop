@@ -64,66 +64,66 @@ class Manager extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    // public function destroy($id)
+    // {
+    //     //
+    // }
 
 
 
-    public function show()
-    {
-        $books= DB::select("SELECT * FROM books");
-        return view('show' , ['books'=>$books]);
-    }
+    // public function show()
+    // {
+    //     $books= DB::select("SELECT * FROM books");
+    //     return view('show' , ['books'=>$books]);
+    // }
 
-    public function create()
-    {
-        return view('form');
-    }
+    // public function create()
+    // {
+    //     return view('form');
+    // }
 
-    public function book($id){
-       $book= DB::select("SELECT * FROM books WHERE id_book=?", [$id]);
-       return view('book' , ['book'=>$book[0]]);
-    }
+    // public function book($id){
+    //    $book= DB::select("SELECT * FROM books WHERE id_book=?", [$id]);
+    //    return view('book' , ['book'=>$book[0]]);
+    // }
 
-    public function store(Request $request)
-    {
-       DB::insert("INSERT INTO books (Author , Title) VALUES (? , ?)",
-        [$request->Author, $request->Title]);
-        //echo $request->Author;
-    }
-
-
-    public function delete($id){
-        DB::delete("DELETE FROM books WHERE id_book=?",[$id]);
-
-        return redirect('show');
-    }
-
-    public function edit( $id){
-
-        $book= DB::select("SELECT * FROM books WHERE books.id_book=?", [$id]);
-
-        return view('edit' , ['books'=>$book[0], "id" => $id]);
+    // public function store(Request $request)
+    // {
+    //    DB::insert("INSERT INTO books (Author , Title) VALUES (? , ?)",
+    //     [$request->Author, $request->Title]);
+    //     //echo $request->Author;
+    // }
 
 
+    // public function delete($id){
+    //     DB::delete("DELETE FROM books WHERE id_book=?",[$id]);
 
-        // DB::update("UPDATE books SET Author=?, Title=? WHERE id_book=?",
-        // [$request->Author, $request->Title, $id]);
+    //     return redirect('show');
+    // }
+
+    // public function edit( $id){
+
+    //     $book= DB::select("SELECT * FROM books WHERE books.id_book=?", [$id]);
+
+    //     return view('edit' , ['books'=>$book[0], "id" => $id]);
 
 
 
-    }
+    //     // DB::update("UPDATE books SET Author=?, Title=? WHERE id_book=?",
+    //     // [$request->Author, $request->Title, $id]);
 
-    public function update(Request $request , $id){
 
-        DB::update("UPDATE books SET Author=?, Title=? WHERE id_book=?",
-        [$request->Author, $request->Title, $id]);
 
-        return redirect('show');
+    // }
 
-    }
+    // public function update(Request $request , $id){
+
+    //     DB::update("UPDATE books SET Author=?, Title=? WHERE id_book=?",
+    //     [$request->Author, $request->Title, $id]);
+
+    //     return redirect('show');
+
+    // }
 
 
 }
